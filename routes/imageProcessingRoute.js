@@ -4,7 +4,7 @@ import axios from "axios";
 
 export const router = express.Router();
 
-router.get("/filteredimage", async (req, res) => {
+router.get("/", async (req, res) => {
 
     let errorMsg = null;
 
