@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "1eabacef-0656-4e8b-9e00-6104ad29ba16",
+		"name": "RemoteLocalUdacityFullStackAWSFinalProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11546629"
+	},
+	"item": [
+		{
+			"name": "Unauthorized",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://image-processing-api-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
+					"protocol": "http",
+					"host": [
+						"image-processing-api-dev",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorized",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://image-processing-api-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
+					"protocol": "http",
+					"host": [
+						"image-processing-api-dev",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@test.com\",\n    \"password\":\"securePassword123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://image-processing-api-dev.us-east-1.elasticbeanstalk.com/auth/token",
+					"protocol": "http",
+					"host": [
+						"image-processing-api-dev",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refreshToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ0b2tlblR5cGUiOiJSRUZSRVNIX1RPS0VOIiwiaWF0IjoxNjk4ODUwODQ3LCJleHAiOjE2OTg4NTE0NTF9.Jf8bgNUfiTyJ7ezpT82xHwdNI27y0wNNl7iHGkgabrS1BiY5yZp_a-c6IXDmw8YVkSC10aCed4sT2KWCVogYGmnKnSVJOjFGAh0n-K4nBX9qGjdU4gR7P66MupQlT1IelvobMgt8Eha693gty_wv8FKzXrpuAoyW0SPpn-vJavNMC57hicBy99AnhhtTq9b52rmjlaE8fEXPqaO2IFicdGSouQSW6-Hjmf7Lq0w_TPycQ3E8kwdYRKrZAZEUUyJODw3VmBN7VCSWzfqE3Ui86Vn3dgTe23uW7ebPqtxcyZr07b2D1NuvUQ73Y-_qym_ElFn4UTMrIV4xO4chfS2p2Q\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://image-processing-api-dev.us-east-1.elasticbeanstalk.com/auth/refresh",
+					"protocol": "http",
+					"host": [
+						"image-processing-api-dev",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HomeTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://image-processing-api-dev.us-east-1.elasticbeanstalk.com",
+					"protocol": "http",
+					"host": [
+						"image-processing-api-dev",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "jwt_token",
+			"value": ""
+		}
+	]
+}
