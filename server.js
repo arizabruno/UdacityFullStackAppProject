@@ -27,4 +27,5 @@ app.listen( port, () => {
 } );
 
 app.use("/auth", authRoutes);
-app.use("/filteredimage", requiresAuth(), imageProcessingRoute);
+// app.use("/filteredimage", requiresAuth(), imageProcessingRoute);
+app.use("/filteredimage", imageProcessingRoute);
